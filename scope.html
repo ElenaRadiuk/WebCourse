@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scope</title>
+</head>
+<body>
+  <style>
+    #outputInfo {
+      margin: 4vh 50px;
+    }
+  </style>
+   
+
+  <div id="outputInfo"></div>
+
+  <script>
+
+// Examples of Block Scope
+  
+  if (true) {
+    var x = 10;   // Function-scoped (not block-scoped)
+    let y = 20;   // Block-scoped
+    const z = 30; // Block-scoped
+    console.log(y);
+  }
+
+  // console.log(x); // Output: 10 (accessible outside the block)
+  // console.log(y); // Error: y is not defined (block-scoped)
+  // console.log(z); // Error: z is not defined (block-scoped)
+
+
+  // Example of Function Scope
+  function example() {
+    var x = 10;   // Function-scoped
+    let y = 20;   // Function-scoped
+    const z = 30; // Function-scoped
+    console.log(x, y, z); // Output: 10 20 30
+  }
+
+  example();
+
+  // console.log(x); // Error: x is not defined
+  // console.log(y); // Error: y is not defined
+  // console.log(z); // Error: z is not defined
+
+
+  let globalLet = "This is a global variable"
+
+  function fun() {
+      let localLet = "This is a local variable"
+  }
+  fun();
+  console.log(globalLet);
+  console.log(localLet);
+
+
+  // const PI = 3.14;
+  // function add(a, b) {
+  //   return a + b;
+  // }
+
+  // module.exports = { PI, add };
+
+  </script>
+</body>
+</html>
